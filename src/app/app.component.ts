@@ -13,6 +13,8 @@ export class AppComponent {
 
    name:string;
    password:string;
+   statuts:boolean;
+   names:Array<Object>;
   constructor(private mylogin :LoginService){
    var first= this.mylogin.login('admin','admin');
    var second= this.mylogin.login('admin','admin2');
@@ -34,7 +36,12 @@ export class AppComponent {
 login(){
 
   var result=this.mylogin.login(this.name,this.password);
-  console.log(result);
+  this.statuts=result;
+  this.loadnames();
+  console.log(this.names);
+}
+loadnames(){
+  this.names=this.mylogin.load()
 }
 
 }

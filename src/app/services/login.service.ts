@@ -16,5 +16,13 @@ export class LoginService {
       return false;
      }
    }
-
+   //load
+load(){
+  var data=[];
+  for(let i=0;i<10;i++){
+    var item ={id:i,name:"name" +i}
+    data.push(item);
+  }
+  return data;
+}
 }

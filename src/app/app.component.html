@@ -1,5 +1,6 @@
 
-  <form>
+
+ <form>
   <label>name:</label>
   <input type="text" name="name" [(ngModel)]="name">
   <label>password</label>
@@ -7,3 +8,23 @@
   <input type="submit" value="Login" (click)="login()" >
 
 </form>
+<p *ngIf=" statuts;else error">user has been login</p>
+
+<ng-template #error>
+<p>user or password are not correct</p>
+</ng-template>
+
+<div>
+
+  <h1>
+    this is the list of users from service
+    <table>
+      <tr *ngFor="let name of names">
+        <td>id:{{name.id}}</td>
+        <td>name:{{name.name}}</td>
+      </tr>
+    </table>
+  </h1>
+
+
+</div>
