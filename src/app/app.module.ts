@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { FirstComponent } from './first/first.component';
 import { LoginService } from './services/login.service';
 import { OtherComponent } from './other/other.component';
+import { NewComponent } from './new/new.component';
 
 
 
@@ -15,7 +16,8 @@ import { OtherComponent } from './other/other.component';
   declarations: [
     AppComponent,
     FirstComponent,
-    OtherComponent
+    OtherComponent,
+    NewComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { NewComponent } from './new/new.component';
 import { FirstComponent } from './first/first.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -8,7 +9,8 @@ export const routes: Routes = [
   {path:'',component:OtherComponent},
   {path:'other',component:OtherComponent},
   {path:'first',component:FirstComponent},
-  {path:"*",component:OtherComponent}
+  {path:"*",component:OtherComponent},
+  {path:"**",component:NewComponent}
 ];
 
 @NgModule({

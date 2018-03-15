@@ -1,6 +1,7 @@
 import { FirstComponent } from './first/first.component';
 import { Component } from '@angular/core';
 import { LoginService } from './services/login.service';
+import { Router } from '@angular/router';
 
 FirstComponent
 
@@ -15,7 +16,7 @@ export class AppComponent {
    password:string;
    statuts:boolean;
    names:Array<Object>;
-  constructor(private mylogin :LoginService){
+  constructor(private mylogin :LoginService,private myrouter:Router){
    var first= this.mylogin.login('admin','admin');
    var second= this.mylogin.login('admin','admin2');
    //console.log(first,second);
@@ -37,6 +38,13 @@ login(){
 
   var result=this.mylogin.login(this.name,this.password);
   this.statuts=result;
+  if (this.statuts){
+  //login succes
+    this.myrouter.navigate(['/new']);
+  }
+  else{
+    this.myrouter.navigate(['/other']);
+  }
   this.loadnames();
   console.log(this.names);
 }
