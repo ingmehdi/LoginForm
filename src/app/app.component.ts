@@ -16,6 +16,7 @@ export class AppComponent {
    password:string;
    statuts:boolean;
    names:Array<Object>;
+   id:string="30003";
   constructor(private mylogin :LoginService,private myrouter:Router){
    var first= this.mylogin.login('admin','admin');
    var second= this.mylogin.login('admin','admin2');

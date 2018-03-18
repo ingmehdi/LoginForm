@@ -10,6 +10,7 @@ export const routes: Routes = [
   {path:'other',component:OtherComponent},
   {path:'first',component:FirstComponent},
   {path:"*",component:OtherComponent},
+  {path:'new/:id',component:NewComponent},
   {path:"**",component:NewComponent}
 ];
 

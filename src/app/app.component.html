@@ -31,7 +31,10 @@
   <router-outlet></router-outlet>
 </div>
 
-<div><h1>nav</h1></div>
-<a routerLink="/first">first</a>
-<a routerLink="/other">other</a>
-<a routerLink="/new">new</a>
+
+<div>nav
+<a [routerLink]="['/first',{id:030303,name:'mehdi'}]">first</a>
+<a [routerLink]="['/other']" [queryParams]="{id:030303,status:true,name:'mehdi'}">second</a>
+<a routerLink="/new/{{id}}">new</a>
+<a [routerLink]="['/new',id]">newother way</a>
+</div>
