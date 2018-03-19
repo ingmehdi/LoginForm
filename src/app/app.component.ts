@@ -52,5 +52,17 @@ login(){
 loadnames(){
   this.names=this.mylogin.load()
 }
-
+//navigate from typescript
+//send optional params
+goToFirst(){
+  this.myrouter.navigate(['/first',{id:39494,name:'mehdi'}])
+}
+//send queryparams
+goToOther(){
+  this.myrouter.navigate(['/other'],{queryParams:{id:this.id,name:'mehdi',status:true}})
+}
+//send req params
+goToNew(){
+  this.myrouter.navigate(['/new',this.id])
+}
 }

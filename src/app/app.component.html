@@ -38,3 +38,9 @@
 <a routerLink="/new/{{id}}">new</a>
 <a [routerLink]="['/new',id]">newother way</a>
 </div>
+
+<div>
+  <button (click)="goToFirst()">first</button>
+  <button (click)="goToOther()">other</button>
+  <button (click)="goToNew()">new</button>
+</div>
