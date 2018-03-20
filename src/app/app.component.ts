@@ -65,4 +65,5 @@ goToOther(){
 goToNew(){
   this.myrouter.navigate(['/new',this.id])
 }
+
 }
