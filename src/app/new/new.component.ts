@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { SharedService } from '../services/shared.service';
 
 @Component({
   selector: 'app-new',
@@ -9,12 +10,14 @@ import { ActivatedRoute } from '@angular/router';
 export class NewComponent implements OnInit {
   id:string;
 
-  constructor(private route:ActivatedRoute) {
+  constructor(private route:ActivatedRoute,public shared:SharedService) {
     
 
     //get id from route
     this.id=this.route.snapshot.paramMap.get('id');
-    console.log(this.id);
+    console.log(this.shared.getUser());
+    console.log(this.shared.getLogin());
+    this.shared.setToken("541654165454541");
 
    }
 

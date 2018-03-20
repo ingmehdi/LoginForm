@@ -2,6 +2,7 @@ import { FirstComponent } from './first/first.component';
 import { Component } from '@angular/core';
 import { LoginService } from './services/login.service';
 import { Router } from '@angular/router';
+import { SharedService } from './services/shared.service';
 
 FirstComponent
 
@@ -17,7 +18,8 @@ export class AppComponent {
    statuts:boolean;
    names:Array<Object>;
    id:string="30003";
-  constructor(private mylogin :LoginService,private myrouter:Router){
+  constructor(private mylogin :LoginService,private myrouter:Router,
+    public myshared:SharedService){
    var first= this.mylogin.login('admin','admin');
    var second= this.mylogin.login('admin','admin2');
    //console.log(first,second);
@@ -39,6 +41,10 @@ login(){
 
   var result=this.mylogin.login(this.name,this.password);
   this.statuts=result;
+  this.myshared.setUser('mehdi');
+  this.myshared.setToken('fdgfgfgfdgfg');
+  this.myshared.setLogin(true);
+  console.log("shared data has been setted");
   if (this.statuts){
   //login succes
     this.myrouter.navigate(['/new']);
@@ -47,7 +53,7 @@ login(){
     this.myrouter.navigate(['/other']);
   }
   this.loadnames();
-  console.log(this.names);
+  //console.log(this.names);
 }
 loadnames(){
   this.names=this.mylogin.load()

@@ -9,6 +9,9 @@ import { FirstComponent } from './first/first.component';
 import { LoginService } from './services/login.service';
 import { OtherComponent } from './other/other.component';
 import { NewComponent } from './new/new.component';
+import { SharedService } from './services/shared.service';
+import { HomeComponent } from './services/home/home.component';
+import { LoginComponent } from './services/login/login.component';
 
 
 
@@ -17,7 +20,9 @@ import { NewComponent } from './new/new.component';
     AppComponent,
     FirstComponent,
     OtherComponent,
-    NewComponent
+    NewComponent,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +30,7 @@ import { NewComponent } from './new/new.component';
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [LoginService
+  providers: [LoginService,SharedService
   ],
   bootstrap: [AppComponent]
 })
