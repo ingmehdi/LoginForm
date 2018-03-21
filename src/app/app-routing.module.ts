@@ -10,14 +10,14 @@ import { HomeComponent } from './home/home.component';
 
 
 export const routes: Routes = [
-  {path:'',component:OtherComponent},
+  {path:'',component:LoginComponent},
   {path:'login',component:LoginComponent},
   {path:'home/:id',component:HomeComponent},
-  {path:'other',component:OtherComponent},
-  {path:'first',component:FirstComponent},
-  {path:"*",component:OtherComponent},
-  {path:'new/:id',component:NewComponent},
-  {path:"**",redirectTo:LoginComponent}
+  //{path:'other',component:OtherComponent},
+  //{path:'first',component:FirstComponent},
+  //{path:"*",component:OtherComponent},
+  //{path:'new/:id',component:NewComponent},
+  //{path:"**",redirectTo:LoginComponent}
 ];
 
 @NgModule({

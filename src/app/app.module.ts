@@ -10,8 +10,8 @@ import { LoginService } from './services/login.service';
 import { OtherComponent } from './other/other.component';
 import { NewComponent } from './new/new.component';
 import { SharedService } from './services/shared.service';
-import { HomeComponent } from './services/home/home.component';
-import { LoginComponent } from './services/login/login.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 
 
 
