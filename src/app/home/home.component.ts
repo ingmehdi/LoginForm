@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  id:string;
 
-  constructor() { }
+  constructor(private myroute:ActivatedRoute) {
+    this.id=this.myroute.snapshot.paramMap.get('id');
+   }
 
   ngOnInit() {
   }

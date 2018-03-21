@@ -12,6 +12,7 @@ import { NewComponent } from './new/new.component';
 import { SharedService } from './services/shared.service';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { SigninService } from './services/signin.service';
 
 
 
@@ -30,7 +31,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [LoginService,SharedService
+  providers: [LoginService,SharedService,SigninService 
   ],
   bootstrap: [AppComponent]
 })
