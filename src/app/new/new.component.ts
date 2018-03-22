@@ -1,3 +1,4 @@
+import { StreamService } from './../services/stream.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SharedService } from '../services/shared.service';
@@ -10,7 +11,7 @@ import { SharedService } from '../services/shared.service';
 export class NewComponent implements OnInit {
   id:string;
 
-  constructor(private route:ActivatedRoute,public shared:SharedService) {
+  constructor(private route:ActivatedRoute,public shared:SharedService,private MyStream:StreamService) {
     
 
     //get id from route
@@ -23,5 +24,32 @@ export class NewComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  loadme(){
+    this.MyStream.createStream().subscribe(
+      next=>{
+        console.log(next);
+      },
+      error=>{
+        console.log(error);
+      },
+      ()=>{
+        console.log("Done");
+      },
+      
+    )
+  };
+  loadme2(){
+    this.MyStream.createStream2().subscribe(
+      next=>{
+        console.log(next);
+      },
+      error=>{
+        console.log(error);
+      },
+      ()=>{
+        console.log("Done");
+      },
+      
+    )
+  };
 }

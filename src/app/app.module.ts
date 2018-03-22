@@ -1,3 +1,4 @@
+import { StreamService } from './services/stream.service';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -31,7 +32,7 @@ import { SigninService } from './services/signin.service';
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [LoginService,SharedService,SigninService 
+  providers: [LoginService,SharedService,SigninService ,StreamService
   ],
   bootstrap: [AppComponent]
 })

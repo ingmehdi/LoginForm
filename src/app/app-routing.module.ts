@@ -10,7 +10,7 @@ import { HomeComponent } from './home/home.component';
 
 
 export const routes: Routes = [
-  {path:'',component:LoginComponent},
+  {path:'',component:NewComponent},
   {path:'login',component:LoginComponent},
   {path:'home/:id',component:HomeComponent},
   //{path:'other',component:OtherComponent},
