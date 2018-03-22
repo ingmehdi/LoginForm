@@ -1,5 +1,5 @@
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-first',
@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class FirstComponent implements OnInit {
   id:string;
   name:string;
-
+  @Input() message :string;
   constructor(private route:ActivatedRoute) {
 
     //get optional params

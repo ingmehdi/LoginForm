@@ -44,9 +44,12 @@ login(){
   this.myshared.setUser('mehdi');
   this.myshared.setToken('fdgfgfgfdgfg');
   this.myshared.setLogin(true);
-  console.log("shared data has been setted");
+  //save token to user local storage
+ // console.log("shared data has been setted");
   if (this.statuts){
   //login succes
+  localStorage.setItem ('token','dfgfdsgfdsgfdg');
+
     this.myrouter.navigate(['/new']);
   }
   else{
@@ -70,6 +73,10 @@ goToOther(){
 //send req params
 goToNew(){
   this.myrouter.navigate(['/new',this.id])
+}
+sendmessage(){
+  return "mahdi fajraoui";
+
 }
 
 }

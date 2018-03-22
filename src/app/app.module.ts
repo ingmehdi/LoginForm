@@ -1,3 +1,5 @@
+import { GuardGuard } from './services/guard.guard';
+import { CallapiService } from './services/callapi.service';
 import { StreamService } from './services/stream.service';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,6 +16,8 @@ import { SharedService } from './services/shared.service';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SigninService } from './services/signin.service';
+import { HttpModule } from '@angular/http';
+
 
 
 
@@ -30,9 +34,11 @@ import { SigninService } from './services/signin.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpModule
   ],
-  providers: [LoginService,SharedService,SigninService ,StreamService
+  providers: [LoginService,SharedService,SigninService ,StreamService,
+    CallapiService,GuardGuard
   ],
   bootstrap: [AppComponent]
 })
