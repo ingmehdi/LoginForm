@@ -27,7 +27,7 @@ export class AppComponent implements AfterViewInit {
     public myshared:SharedService){
       //create user object
 
-   this.user={name:'mehdi',status:true,age:30,id:25}
+   this.user={name:'mehdi',status:false,age:60,id:25}
    var first= this.mylogin.login('admin','admin');
    var second= this.mylogin.login('admin','admin2');
    //console.log(first,second);
@@ -108,6 +108,15 @@ changeClass(){
     'active':this.user.status
 
   }
+}
+//change style
+changeStyle(){
+  return{
+    'color':this.user.status? 'green':'red',
+    'background-color':this.user.id==25? 'gray':'blue',
+    'font-size':this.user.age>30? '45px' :'20px'
+  }
+
 }
 
 }
