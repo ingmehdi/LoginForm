@@ -1,5 +1,5 @@
 import { FirstComponent } from './first/first.component';
-import { Component } from '@angular/core';
+import { Component,ViewChild,AfterViewInit} from '@angular/core';
 import { LoginService } from './services/login.service';
 import { Router } from '@angular/router';
 import { SharedService } from './services/shared.service';
@@ -11,7 +11,7 @@ FirstComponent
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
 
    name:string;
    password:string;
@@ -20,6 +20,8 @@ export class AppComponent {
    id:string="30003";
    //counter notify
    counter:number=0;
+
+   @ViewChild (FirstComponent) myfirst:FirstComponent;
   constructor(private mylogin :LoginService,private myrouter:Router,
     public myshared:SharedService){
    var first= this.mylogin.login('admin','admin');
@@ -85,4 +87,14 @@ getFromChild(event){
   this.counter+=event;
 
 }
+changeX(){
+  this.myfirst.update(13);
+
+}
+//get name from first component
+getME(){console.log(this.myfirst.name);}
+ngAfterViewInit(){
+
+}
+
 }

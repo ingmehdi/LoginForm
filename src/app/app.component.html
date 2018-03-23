@@ -1,6 +1,10 @@
 <div class="home">
 this is the main component this the number of notifcation {{counter}}
 </div>
+<div>
+  <button (click)="getME()">GET DATA</button>
+  <button (click)="changeX()">change X</button>
+</div>
 <app-first [message]="sendmessage()" (notify)="getFromChild($event)">
 
 </app-first>
