@@ -1,17 +1,35 @@
 <div class="home">
-this is the main component this the number of notifcation {{counter}}
+this is the main component 
+
+<table>
+  <tr>
+    <td>
+      name:
+    </td>
+    <td>
+      {{user.name}}
+    </td>
+  </tr>
+  <tr>
+    <td>status:</td>
+    <td class="noActive" [ngClass]="changeClass()">Active</td>
+  </tr>
+
+
+</table>
+<!-- this the number of notifcation {{counter}} -->
 </div>
-<div>
+
+
+
+
+<!-- <div>
   <button (click)="getME()">GET DATA</button>
   <button (click)="changeX()">change X</button>
 </div>
 <app-first [message]="sendmessage()" (notify)="getFromChild($event)">
 
-</app-first>
-
-
-
-
+</app-first> -->
 
 
 

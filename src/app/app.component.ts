@@ -20,10 +20,14 @@ export class AppComponent implements AfterViewInit {
    id:string="30003";
    //counter notify
    counter:number=0;
+   user:{name,status,id ,age};
 
    @ViewChild (FirstComponent) myfirst:FirstComponent;
   constructor(private mylogin :LoginService,private myrouter:Router,
     public myshared:SharedService){
+      //create user object
+
+   this.user={name:'mehdi',status:true,age:30,id:25}
    var first= this.mylogin.login('admin','admin');
    var second= this.mylogin.login('admin','admin2');
    //console.log(first,second);
@@ -95,6 +99,15 @@ changeX(){
 getME(){console.log(this.myfirst.name);}
 ngAfterViewInit(){
 
+}
+//change classes
+changeClass(){
+  return {
+    'age':this.user.age>20,
+    'id':this.user.id==25,
+    'active':this.user.status
+
+  }
 }
 
 }
