@@ -18,6 +18,8 @@ export class AppComponent {
    statuts:boolean;
    names:Array<Object>;
    id:string="30003";
+   //counter notify
+   counter:number=0;
   constructor(private mylogin :LoginService,private myrouter:Router,
     public myshared:SharedService){
    var first= this.mylogin.login('admin','admin');
@@ -44,6 +46,7 @@ login(){
   this.myshared.setUser('mehdi');
   this.myshared.setToken('fdgfgfgfdgfg');
   this.myshared.setLogin(true);
+  
   //save token to user local storage
  // console.log("shared data has been setted");
   if (this.statuts){
@@ -78,5 +81,8 @@ sendmessage(){
   return "mahdi fajraoui";
 
 }
+getFromChild(event){
+  this.counter+=event;
 
+}
 }

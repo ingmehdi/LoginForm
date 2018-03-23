@@ -1,5 +1,6 @@
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-first',
@@ -10,6 +11,7 @@ export class FirstComponent implements OnInit {
   id:string;
   name:string;
   @Input() message :string;
+  @Output() notify=new EventEmitter <number>();
   constructor(private route:ActivatedRoute) {
 
     //get optional params
@@ -20,5 +22,8 @@ export class FirstComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  //send data to parent
+  send(){
+    this.notify.emit(20) ;
+  }
 }

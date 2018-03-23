@@ -1,7 +1,7 @@
 <div class="home">
-this is the main component
+this is the main component this the number of notifcation {{counter}}
 </div>
-<app-first [message]="sendmessage()">
+<app-first [message]="sendmessage()" (notify)="getFromChild($event)">
 
 </app-first>
 
